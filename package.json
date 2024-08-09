@@ -1,0 +1,11 @@
+{
+  "name": "txn3",
+  "version": "0.0.0",
+  "description": "Transaction Builder for Web3",
+  "main": "src/index.js",
+  "author": "Tasti Zakarie <tasti@zakarie.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
