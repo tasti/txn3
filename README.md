@@ -112,6 +112,14 @@ txn3.ethereum("sepolia").transferToken({
 });
 ```
 
+#### Call
+
+##### Signature
+
+```typescript
+call(params: CallParams) => Transaction
+```
+
 #### Swap
 
 ##### Signature
