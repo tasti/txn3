@@ -20,20 +20,20 @@ const txn3 = new Txn3({ ethereum: { sepolia: "https://rpc.sepolia.org" } });
 
 ### Methods
 
-#### Send
+#### Transfer
 
-Sends the native currency.
+Transfers the native currency.
 
 ##### Signature
 
 ```typescript
-send(params: SendParams) => Transaction
+transfer(params: TransferParams) => Transaction
 ```
 
 ##### Parameters
 
 ```typescript
-interface SendParams {
+interface TransferParams {
   amount: string;
   from: string;
   to: string;
@@ -43,25 +43,25 @@ interface SendParams {
 ##### Example
 
 ```typescript
-txn3.ethereum("sepolia").send({
+txn3.ethereum("sepolia").transfer({
   amount: "0.123",
   from: "0x...",
   to: "0x...",
 });
 ```
 
-#### Send an NFT
+#### Transfer an NFT
 
 ##### Signature
 
 ```typescript
-sendNft(params: SendNftParams) => Transaction
+transferNft(params: TransferNftParams) => Transaction
 ```
 
 ##### Parameters
 
 ```typescript
-interface SendNftParams {
+interface TransferNftParams {
   amount: string;
   contractAddress: string;
   from: string;
@@ -73,7 +73,7 @@ interface SendNftParams {
 ##### Example
 
 ```typescript
-txn3.ethereum("sepolia").sendNft({
+txn3.ethereum("sepolia").transferNft({
   amount: "0.123",
   contractAddress: "0x...",
   from: "0x...",
@@ -82,18 +82,18 @@ txn3.ethereum("sepolia").sendNft({
 });
 ```
 
-#### Send a Token
+#### Transfer a Token
 
 ##### Signature
 
 ```typescript
-sendToken(params: SendTokenParams) => Transaction
+transferToken(params: TransferTokenParams) => Transaction
 ```
 
 ##### Parameters
 
 ```typescript
-interface SendTokenParams {
+interface TransferTokenParams {
   amount: string;
   contractAddress: string;
   from: string;
@@ -104,7 +104,7 @@ interface SendTokenParams {
 ##### Example
 
 ```typescript
-txn3.ethereum("sepolia").sendToken({
+txn3.ethereum("sepolia").transferToken({
   amount: "0.123",
   contractAddress: "0x...",
   from: "0x...",
@@ -163,35 +163,35 @@ interface Transaction {
 }
 ```
 
-#### SendParams
+#### TransferParams
 
 ```typescript
-interface SendParams {
+interface TransferParams {
   amount: string;
   from: string;
   to: string;
 }
 ```
 
-#### SendNftParams
+#### TransferNftParams
 
 ```typescript
-interface SendNftParams {
+interface TransferNftParams {
   amount: string;
   contractAddress: string;
   from: string;
   to: string;
 }
 
-interface EthereumSendNftParams extends SendNftParams {
+interface EthereumTransferNftParams extends TransferNftParams {
   tokenId: string;
 }
 ```
 
-#### SendTokenParams
+#### TransferTokenParams
 
 ```typescript
-interface SendTokenParams {
+interface TransferTokenParams {
   amount: string;
   contractAddress: string;
   from: string;
